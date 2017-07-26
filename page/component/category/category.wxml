@@ -1,18 +1,18 @@
 <view class="main">
     <view class="categroy-left">
-        <view wx:for="{{category}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}"
+        <view wx:for="{{category}}" wx:key="index" data-id="{{item.cate_id}}" data-index="{{index}}"
             bindtap="switchTab"
-            class="cate-list {{curIndex === index?'on':''}}">{{item.name}}</view>
+            class="cate-list {{curIndex === index?'on':''}}">{{item.cate_name}}</view>
     </view>
 
     <scroll-view class="categroy-right" scroll-y="{{isScroll}}" scroll-into-view="{{toView}}" scroll-with-animation="true">
         <block wx:for="{{detail}}" wx:for-index wx:key="idx">
-            <view id="{{item.id}}" class="cate-box">
+            <view id="{{item.cate_id}}" class="cate-box">
                 <view class="cate-banner">
                     <image src="{{item.banner}}"></image>
                 </view>
                 <view class="cate-title">
-                    <text>{{item.cate}}</text>
+                    <text>{{item.cate_name}}</text>
                 </view>
                 <view class="product">
                     <view class="product-list" wx:for="{{item.detail}}" wx:key="index" wx:for-item="val">

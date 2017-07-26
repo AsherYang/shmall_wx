@@ -4,12 +4,12 @@ var app = getApp();
 Page({
     data: {
         category: [
-            {name:'果味',id:'guowei'},
-            {name:'蔬菜',id:'shucai'},
-            {name:'炒货',id:'chaohuo'},
-            {name:'点心',id:'dianxin'},
-            {name:'粗茶',id:'cucha'},
-            {name:'淡饭',id:'danfan'}
+          { name: '果味', cate_id:'guowei'},
+          { name: '蔬菜', cate_id:'shucai'},
+          { name: '炒货', cate_id:'chaohuo'},
+          { name: '点心', cate_id:'dianxin'},
+          { name: '粗茶', cate_id:'cucha'},
+          { name: '淡饭', cate_id:'danfan'}
         ],
         detail:[],
         curIndex: 0,
@@ -22,7 +22,7 @@ Page({
         var categoryUrl = 'https://api.vdian.com/api?param={"showNoCate":"0"}&public={"method":"weidian.cate.get.list","access_token":"' + app.globalData.token + '","version":"1.0"}';
         networkUtil._get(categoryUrl,
         function(res) {
-          console.log("category suceess data = " + res.data);
+          self.setData({category: res.data.result});
         },
         function(res){
           console.log("category fail data = " + res.data);

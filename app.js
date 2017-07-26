@@ -28,5 +28,22 @@ App({
   globalData: {
     hasLogin: false,
     token: null
+  },
+
+// 更新token
+  updateToken: function() {
+    console.log('update Token');
+    var that = this;
+    var updateTokenUrl = 'http://shmall.fansdroid.net/update/token'
+    networkUtil._get(updateTokenUrl, 
+      function (res){
+        that.globalData.token = res.data;
+        console.log("token = " + that.globalData.token);
+      },
+      function (res) {
+        wx.showToast({
+          title: '更新token失败' + res.data,
+        })
+      });
   }
 })

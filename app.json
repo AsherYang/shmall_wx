@@ -12,13 +12,13 @@
   "window": {
     "navigationBarTextStyle": "#ffffff",
     "navigationBarTitleText": "上好生活",
-    "navigationBarBackgroundColor": "#AB956D",
+    "navigationBarBackgroundColor": "#cc0000",
     "backgroundColor": "#eeeeee",
     "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#b7b7b7",
-    "selectedColor": "#AB956D",
+    "selectedColor": "#cc0000",
     "borderStyle": "#f5f5f5",
     "backgroundColor": "#f5f5f5",
     "list": [{

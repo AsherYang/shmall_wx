@@ -17,8 +17,8 @@ page,.main{
     border-left: 3px solid #fff;
 }
 .categroy-left .cate-list.on{
-    color: #AB956D;
-    border-color: #AB956D;
+    color: #cc0000;
+    border-color: #cc0000;
 }
 .categroy-right{
     float: right;

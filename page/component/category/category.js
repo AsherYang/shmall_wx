@@ -33,6 +33,6 @@ Page({
             toView : e.target.dataset.id,
             curIndex : e.target.dataset.index
         })
-    }
-    
+    },
+   
 })

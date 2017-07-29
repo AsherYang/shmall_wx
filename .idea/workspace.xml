@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0c1cd5a-ad0e-4305-aae5-492a56f455d2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/component/category/category.js" afterPath="$PROJECT_DIR$/page/component/category/category.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/component/category/category.wxss" afterPath="$PROJECT_DIR$/page/component/category/category.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/component/index.js" afterPath="$PROJECT_DIR$/page/component/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/component/index.wxml" afterPath="$PROJECT_DIR$/page/component/index.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/component/index.wxss" afterPath="$PROJECT_DIR$/page/component/index.wxss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/component/user/user.wxml" afterPath="$PROJECT_DIR$/page/component/user/user.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/component/user/user.wxss" afterPath="$PROJECT_DIR$/page/component/user/user.wxss" />
     </list>
     <ignored path="wxapp-mall-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -128,6 +135,14 @@
       <option name="presentableId" value="Default" />
       <updated>1501003057554</updated>
     </task>
+    <task id="LOCAL-00001" summary="add cvs config">
+      <created>1501297031237</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1501297031237</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -170,6 +185,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add cvs config" />
+    <option name="LAST_COMMIT_MESSAGE" value="add cvs config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

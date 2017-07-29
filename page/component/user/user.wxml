@@ -2,7 +2,7 @@
     <view class="header">
         <image src="{{thumb}}" class="thumb"></image>
         <text class="nickname">{{nickname}}</text>
-        <text class="about">关于我们</text>
+        <text class="about">您好</text>
     </view>
     <view class="address-box">
         <view class="address-manage">

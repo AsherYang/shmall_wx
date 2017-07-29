@@ -4,7 +4,7 @@ App({
   onLaunch: function () {
     console.log('App Launch')
     var that = this;
-    var url = 'http://shmall.fansdroid.net/get/token'
+    var url = 'https://shmall.fansdroid.net/get/token'
     networkUtil._get(url,
       function (res) {
         that.globalData.token = res.data;
@@ -34,7 +34,8 @@ App({
   updateToken: function() {
     console.log('update Token');
     var that = this;
-    var updateTokenUrl = 'http://shmall.fansdroid.net/update/token'
+    var updateTokenUrl = 'https://shmall.fansdroid.net/update/token'
+    // var updateTokenUrl = 'https://api.vdian.com'
     networkUtil._get(updateTokenUrl, 
       function (res){
         that.globalData.token = res.data;

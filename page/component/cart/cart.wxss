@@ -92,8 +92,8 @@
     top: 25rpx;
     width: 45rpx;
     height: 45rpx;
-    background-image: url(/image/icon3.png);
     background-size: 100%;
+    background-image: url('http://up.qqjia.com/z/face01/face06/facejunyong/junyong04.jpg');    
 }
 .cart-toatl-price{
     float: right;

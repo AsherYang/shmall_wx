@@ -49,7 +49,7 @@ swiper-item image {
     width: 100%;
     padding:30rpx 0;
     height: 40rpx;
-    color: #cc0000;
+    color: #888;
     text-align: center;
 }
 .select-top-small{

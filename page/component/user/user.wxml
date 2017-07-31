@@ -7,9 +7,8 @@
   <view class="address-box">
     <view class="address-manage">
       <navigator url="/page/component/address/address">
-        <view wx:if="{{hasAddress}}" class="address-list">
-          <view>{{address.detail}}</view>
-        </view>
+        <view wx:if="{{hasAddress}}">{{address.detail}}</view>
+        <view wx:else>地址管理</view>
       </navigator>
     </view>
     <!-- <view wx:if="{{hasAddress}}" class="address-list">

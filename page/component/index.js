@@ -14,7 +14,7 @@ Page({
   callFun(e) {
     console.log('调用call');
     wx.makePhoneCall({
-      phoneNumber: '13553831061',
+      phoneNumber: '076922880110',
       success: function () {
         console.log('call success');
       },

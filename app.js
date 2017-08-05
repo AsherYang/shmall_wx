@@ -4,16 +4,16 @@ App({
   onLaunch: function () {
     console.log('App Launch')
     var that = this;
-    var url = 'http://shmall.fansdroid.net/get/token'
+    var url = 'https://shmall.fansdroid.net/get/token'
     networkUtil._get(url,
       function (res) {
         that.globalData.token = res.data;
         console.log("token = " + that.globalData.token);
       },
       function (res) {
-        console.log("fail , res data= " + res.data + 'url = ' + url);
+        console.log("fail , res data= " + res.data + ", url = " + url);
         wx.showToast({
-          title: '获取token失败'+ res.data,
+          title: '获取token失败'+res.data,
         })
       });
   },
@@ -42,20 +42,9 @@ App({
         console.log("token = " + that.globalData.token);
       },
       function (res) {
-        // wx.showToast({
-        //   title: '更新token失败' + res.data,
-        // })
         wx.showToast({
           title: '更新token失败' + res.data,
-          icon: '/image/icon3.png',
-          image: '',
-          duration: 3000,
-          mask: true,
-          success: function(res) {},
-          fail: function(res) {},
-          complete: function(res) {},
         })
       });
   }
-
 })

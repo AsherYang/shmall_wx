@@ -14,7 +14,7 @@
     "navigationBarTitleText": "上好生活",
     "navigationBarBackgroundColor": "#cc0000",
     "backgroundColor": "#eeeeee",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "color": "#b7b7b7",

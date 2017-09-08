@@ -4,7 +4,7 @@ var app = getApp();
 Page({
   data: {
     category: [
-      { cate_name: '甘醇美酒果味', cate_id: '83263088' },
+      { cate_name: '甘醇美酒', cate_id: '83263088' },
       { cate_name: '饮料净水', cate_id: '83090667' },
       { cate_name: '冷冻冷藏', cate_id: '83090664' },
       { cate_name: '新鲜奶饮', cate_id: '83090668' },

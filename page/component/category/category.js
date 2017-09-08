@@ -18,6 +18,11 @@ Page({
   },
   // url = https://api.vdian.com/api?param={"showNoCate":"0"}&public={"method":"weidian.cate.get.list","access_token":"9882ff6e635aac4740646cf93f2389320007487713","version":"1.0"}
   onReady() {
+    var self = this;
+    self.getCategoryFromNet();
+  },
+
+  getCategoryFromNet: function() {
     // 获取商品分类 category
     var self = this;
     var categoryUrl = 'https://api.vdian.com/api?param={"showNoCate":"0"}&public={"method":"weidian.cate.get.list","access_token":"' + app.globalData.token + '","version":"1.0"}';
@@ -30,6 +35,7 @@ Page({
         console.log("category fail data = " + res.data);
       });
   },
+
   switchTab(e) {
     this.setData({
       toView: e.target.dataset.id,

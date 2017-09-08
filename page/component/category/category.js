@@ -17,6 +17,7 @@ Page({
     toView: '83263088'
   },
   // url = https://api.vdian.com/api?param={"showNoCate":"0"}&public={"method":"weidian.cate.get.list","access_token":"9882ff6e635aac4740646cf93f2389320007487713","version":"1.0"}
+  // url = https://shmall.fansdroid.net/get/category
   onReady() {
     var self = this;
     self.getCategoryFromNet();
@@ -25,7 +26,7 @@ Page({
   getCategoryFromNet: function() {
     // 获取商品分类 category
     var self = this;
-    var categoryUrl = 'https://api.vdian.com/api?param={"showNoCate":"0"}&public={"method":"weidian.cate.get.list","access_token":"' + app.globalData.token + '","version":"1.0"}';
+    var categoryUrl = 'https://shmall.fansdroid.net/get/category';
     networkUtil._get(categoryUrl,
       function (res) {
         console.log("category = " + res.data.result)

@@ -9,7 +9,7 @@ App({
       function (res) {
         that.globalData.token = res.data;
         console.log("token = " + that.globalData.token);
-        that.getAllGoods();   // 异步获取商品
+       // that.getAllGoods();   // 异步获取商品
       },
       function (res) {
         console.log("fail , res data= " + res.data + ", url = " + url);

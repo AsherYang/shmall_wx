@@ -21,6 +21,8 @@ Page({
   onReady() {
     var self = this;
     self.getCategoryFromNet();
+    self.setData({ detail: app.globalData.allGoods});
+    console.log("goods in category " + self.data.detail.length);
   },
 
   getCategoryFromNet: function() {

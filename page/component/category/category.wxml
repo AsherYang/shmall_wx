@@ -9,19 +9,18 @@
         <block wx:for="{{detail}}" wx:for-index wx:key="idx">
             <view id="{{item.cate_id}}" class="cate-box">
                 <view class="cate-banner">
-                    <image src="{{item.banner}}"></image>
+                    <image src="{{item.imgs}}"></image>
                 </view>
                 <view class="cate-title">
                     <text>{{item.cate_name}}</text>
-                    <text>1123445</text>
                 </view>
                 <view class="product">
-                    <view class="product-list" wx:for="{{item.detail}}" wx:key="index" wx:for-item="val">
+                    <!-- <view class="product-list" wx:for="{{detail}}" wx:key="index" wx:for-item="val"> -->
                         <navigator url="../list/list">
-                            <image src="{{val.thumb}}"></image>
-                            <view class="classname"><text>{{val.name}}</text></view>
+                            <image src="{{item.imgs}}"></image>
+                            <view class="classname"><text>{{item.item_name}}</text></view>
                         </navigator>
-                    </view>
+                    <!-- </view> -->
                 </view>
             </view>
         </block>

@@ -66,6 +66,14 @@ App({
         self.globalData.allGoods = res.data.result;
         console.log("all goods size = " + self.globalData.allGoods.length);
         // self.printAllGoods();
+        for (let i = 0; i < self.globalData.allGoods.length; i++) {
+          self.saveGoodsLogic(self.globalData.allGoods[i]);
+          // debug for storage
+          // var listTmp = wx.getStorageSync(self.globalData.allGoods[i].cate_id);
+          // if (listTmp) {
+          //   console.log(">>>>  cate_id = " + self.globalData.allGoods[i].cate_id + " , itemName = " + self.globalData.allGoods[i].item_name + " , list size = " + listTmp.length + " <<<<< ");
+          // }
+        }
       },
       function (res) {
         console.log("all goods fail data = " + res.data);
@@ -78,5 +86,42 @@ App({
     for (let i = 0; i < self.globalData.allGoods.length; i++) {
       console.log("ii =" + i + ', allGoods lenght = ' + self.globalData.allGoods.length + ' , id = ' + self.globalData.allGoods[i]['itemid'] + " , name = " + self.globalData.allGoods[i]['item_name']);
     }
-  }
+  },
+
+  // 按商品cate_id当key，来保存商品对应分类下的所有商品集
+  saveGoodsLogic: function (goods) {
+    var self = this;
+    // 先从缓存中取出数据,若不存在该key 缓存，则直接存储，
+    // 若存在key 缓存数据，则将数据拿出后加上新数据再一起存储.
+    // console.log("data === " + goods.cate_id + " , itemName = " + goods.item_name);
+    var dataListTmp = new Array();
+    var hasContaint = false;
+    try {
+      var goodsList = wx.getStorageSync(goods.cate_id);
+      if (goodsList) {
+        for (let i = 0; i < goodsList.length; i++) {
+          if (goodsList[i].itemid == goods.itemid) {
+            hasContaint = true;
+          }
+          dataListTmp.push(goodsList[i]);
+        }
+        if (!hasContaint) {
+          dataListTmp.push(goods);
+        }
+      } else {
+        dataListTmp.push(goods);
+      }
+      self.saveGoodsByKey(goods.cate_id, dataListTmp);
+    } catch (e) {
+      console.log("eeeee e = " + e);
+      dataListTmp.push(goods)
+      self.saveGoodsByKey(goods.cate_id, dataListTmp);
+    }
+
+  },
+
+  // 保存Goods进缓存
+  saveGoodsByKey: function (goodsKey, goodsList) {
+    wx.setStorageSync(goodsKey, goodsList);
+  },
 })

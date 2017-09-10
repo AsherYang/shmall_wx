@@ -13,7 +13,7 @@ Page({
     ],
     detail: [],
     curIndex: 0,
-    isScroll: false,
+    isScroll: true,
     toView: '83263088'
   },
   // url = https://api.vdian.com/api?param={"showNoCate":"0"}&public={"method":"weidian.cate.get.list","access_token":"9882ff6e635aac4740646cf93f2389320007487713","version":"1.0"}
@@ -21,7 +21,7 @@ Page({
   onReady() {
     var self = this;
     self.getCategoryFromNet();
-    self.setData({ detail: app.globalData.allGoods});
+    // self.setData({ detail: app.globalData.allGoods});
     console.log("goods in category " + self.data.detail.length);
   },
 
@@ -40,11 +40,11 @@ Page({
   },
 
   switchTab(e) {
+    var self = this;
     this.setData({
       toView: e.target.dataset.id,
-      curIndex: e.target.dataset.index
+      curIndex: e.target.dataset.index,
     })
   },
-
   
 })

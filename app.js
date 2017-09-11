@@ -104,9 +104,9 @@ App({
         for (let j = 0; j < alreadyGoods.length; j++) {
           everyCategoryList.push(alreadyGoods[j]);
         }
-      } 
+      }
       everyCategoryList.push(allGoodsList[i]);
-      goodsCategoryMap[key] = everyCategoryList;      
+      goodsCategoryMap[key] = everyCategoryList;
       // console.log("key = " + key + " , len = " + goodsCategoryMap[key].length);
     }
     // 按照key 保存数据进微信
@@ -128,4 +128,5 @@ App({
       data: goodsList,
     })
   },
-})
+
+});

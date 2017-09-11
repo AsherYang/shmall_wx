@@ -66,14 +66,14 @@ App({
         self.globalData.allGoods = res.data.result;
         console.log("all goods size = " + self.globalData.allGoods.length);
         // self.printAllGoods();
-        for (let i = 0; i < self.globalData.allGoods.length; i++) {
-          self.saveGoodsLogic(self.globalData.allGoods[i]);
-          // debug for storage
-          // var listTmp = wx.getStorageSync(self.globalData.allGoods[i].cate_id);
-          // if (listTmp) {
-          //   console.log(">>>>  cate_id = " + self.globalData.allGoods[i].cate_id + " , itemName = " + self.globalData.allGoods[i].item_name + " , list size = " + listTmp.length + " <<<<< ");
-          // }
-        }
+        self.saveGoodsLogic(self.globalData.allGoods);
+        // debug for storage
+        // wx.getStorage({
+        //   key: '83090664',
+        //   success: function(res) {
+        //     console.log("---- 83090664 storage size = " + res.data.length);
+        //   },
+        // })
       },
       function (res) {
         console.log("all goods fail data = " + res.data);
@@ -89,39 +89,43 @@ App({
   },
 
   // 按商品cate_id当key，来保存商品对应分类下的所有商品集
-  saveGoodsLogic: function (goods) {
+  saveGoodsLogic: function (allGoodsList) {
     var self = this;
-    // 先从缓存中取出数据,若不存在该key 缓存，则直接存储，
-    // 若存在key 缓存数据，则将数据拿出后加上新数据再一起存储.
-    // console.log("data === " + goods.cate_id + " , itemName = " + goods.item_name);
-    var dataListTmp = new Array();
-    var hasContaint = false;
-    try {
-      var goodsList = wx.getStorageSync(goods.cate_id);
-      if (goodsList) {
-        for (let i = 0; i < goodsList.length; i++) {
-          if (goodsList[i].itemid == goods.itemid) {
-            hasContaint = true;
-          }
-          dataListTmp.push(goodsList[i]);
+    // 保存category的cate_id为key, 对应分类下的商品集
+    var goodsCategoryMap = {};       // map (key:String, value:List)
+    for (let i = 0; i < allGoodsList.length; i++) {
+      var key = allGoodsList[i].cate_id;
+      var everyCategoryList = [];      // list      
+      // 是否包含这个category(key) 
+      // console.log("cate key = " + goodsCategoryMap.hasOwnProperty(key));
+      if (goodsCategoryMap.hasOwnProperty(key)) {
+        // 需要把已存在的商品重新添加进来
+        var alreadyGoods = goodsCategoryMap[key];
+        for (let j = 0; j < alreadyGoods.length; j++) {
+          everyCategoryList.push(alreadyGoods[j]);
         }
-        if (!hasContaint) {
-          dataListTmp.push(goods);
-        }
-      } else {
-        dataListTmp.push(goods);
+      } 
+      everyCategoryList.push(allGoodsList[i]);
+      goodsCategoryMap[key] = everyCategoryList;      
+      // console.log("key = " + key + " , len = " + goodsCategoryMap[key].length);
+    }
+    // 按照key 保存数据进微信
+    if (goodsCategoryMap.length != 0) {
+      for (var key in goodsCategoryMap) {
+        // console.log("key = " + key + " , len = " + goodsCategoryMap[key].length);
+        self.saveGoodsByKey(key, goodsCategoryMap[key]);
       }
-      self.saveGoodsByKey(goods.cate_id, dataListTmp);
-    } catch (e) {
-      console.log("eeeee e = " + e);
-      dataListTmp.push(goods)
-      self.saveGoodsByKey(goods.cate_id, dataListTmp);
     }
 
   },
 
   // 保存Goods进缓存
   saveGoodsByKey: function (goodsKey, goodsList) {
-    wx.setStorageSync(goodsKey, goodsList);
+    // wx.setStorageSync(goodsKey, goodsList);  // 同步存储
+    // 异步存储
+    wx.setStorage({
+      key: goodsKey,
+      data: goodsList,
+    })
   },
 })

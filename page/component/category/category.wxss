@@ -86,7 +86,9 @@ page, .main {
   /* background: red; */
   margin: 15rpx;
   /* border: 3rpx solid; */
-  border-radius: 50rpx;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  /* border-radius: 50rpx; */
   border-color: #f5f5f5;
   background: #f8f8f8;
   /* box-shadow: 10px 10px 5px #888; */
@@ -97,8 +99,9 @@ page, .main {
   height: 300rpx;
   margin-bottom: 20rpx;
   /* border: 5rpx solid; *//* border-radius: 25rpx; */
-  border-top-left-radius: 25rpx;
-  border-bottom-left-radius: 25rpx;
+  /* border-top-left-radius: 25rpx;
+  border-bottom-left-radius: 25rpx; */
+  border-radius: 25rpx;
   border-color: #f5f5f5;
   background: #f8f8f8;
 }

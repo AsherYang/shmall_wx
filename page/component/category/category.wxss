@@ -106,6 +106,12 @@ page, .main {
   background: #f8f8f8;
 }
 
+.goodname {
+  float: right;
+  font-size: 24rpx;
+  margin-top: 50rpx;
+}
+
 .product:nth-child(3n) {
   margin-right: 0;
 }

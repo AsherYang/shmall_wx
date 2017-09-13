@@ -10,7 +10,7 @@
         <!-- <view class="product-list" wx:for="{{detail}}" wx:key="index" wx:for-item="val"> -->
           <navigator url="../list/list">
             <image src="{{item.imgs}}"></image>
-            <view class="classname">
+            <view class="goodname">
               <text>{{item.item_name}}</text>
             </view>
           </navigator>

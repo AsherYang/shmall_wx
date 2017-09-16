@@ -92,7 +92,7 @@ page, .main {
   border-bottom-left-radius: 5rpx;
   /* border-radius: 50rpx; */
   border-color: #f5f5f5;
-  border-bottom: 3px solid #f5f5f5;
+  border-top: 3px solid #f5f5f5;
   background: #fff;
   /* box-shadow: 10px 10px 5px #888; */
 }
@@ -120,6 +120,16 @@ page, .main {
   margin-left: -10rpx;
   text-align: left;
 }
+
+.goodprice {
+  float: right;
+  width: 340rpx;
+  font-size: 24rpx;
+  margin-top: 40rpx;
+  margin-left: -10rpx;
+  text-align: left;
+}
+
 
 .product:nth-child(3n) {
   margin-right: 0;

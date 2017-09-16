@@ -12,7 +12,7 @@
             <image src="{{item.imgs}}"></image>
             <view class="goodname">
               <text>{{item.item_name}}</text>
-              <text>¥ </text>                  
+              <text class="goodprice">¥ {{item.price}}</text>                  
             </view>
          
         <!-- </view> -->

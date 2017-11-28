@@ -1,4 +1,6 @@
 // page/component/new-pages/user/user.js
+import networkUtil from '../../../util/networkUtil.js';
+
 Page({
   data:{
     thumb:'',

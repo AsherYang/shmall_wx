@@ -1,4 +1,5 @@
 // page/component/new-pages/user/address/address.js
+import networkUtil from '../../../util/networkUtil.js';
 Page({
   data:{
     address:{
@@ -51,5 +52,20 @@ Page({
     this.setData({
       'address.detail' : e.detail.value
     })
+  },
+
+   /**
+   * 保存用户信息
+   */
+  saveUserInfo:function() {
+    var self = this;
+    var saveUserUrl = 'https://shmall.fansdroid.net/save/user';
+    var userInfo = {};
+    networkUtil._post_form(saveUserUrl, userInfo,
+        success:function(res) {
+        },
+        fail:function(res) {
+        }
+    );
   }
 })

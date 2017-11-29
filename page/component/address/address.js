@@ -27,6 +27,7 @@ Page({
         key: 'address',
         data: self.data.address,
         success(){
+          self.saveUserInfo();
           wx.navigateBack();
         }
       })
@@ -60,11 +61,18 @@ Page({
   saveUserInfo:function() {
     var self = this;
     var saveUserUrl = 'https://shmall.fansdroid.net/save/user';
-    var userInfo = {};
+    var userInfo = {
+        'userName': self.data.address.name,
+        'phone': self.data.address.phone,
+        'address': self.data.address.detail
+    };
+    console.log('userInfo = '+userInfo.userName);
     networkUtil._post_form(saveUserUrl, userInfo,
-        success:function(res) {
+        function(res) {
+          console.log(res);
         },
-        fail:function(res) {
+        function(res) {
+          console.log(res);
         }
     );
   }

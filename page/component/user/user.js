@@ -21,19 +21,19 @@ Page({
           nickname: res.userInfo.nickName
         })
       }
-    }),
+    })
 
     /**
      * 发起请求获取订单列表信息
      */
-    wx.request({
-      url: 'http://www.gdfengshuo.com/api/wx/orders.txt',
-      success(res){
-        self.setData({
-          orders: res.data.orders
-        })
-      }
-    })
+    // wx.request({
+    //   url: 'http://www.gdfengshuo.com/api/wx/orders.txt',
+    //   success(res){
+    //     self.setData({
+    //       orders: res.data.orders
+    //     })
+    //   }
+    // })
   },
   onShow(){
     var self = this;

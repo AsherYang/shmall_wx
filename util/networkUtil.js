@@ -17,7 +17,7 @@ function _get(url, success, fail) {
 }
 
 // post method 表单提交 
-function _post_form(url, data, success, fail) {
+function _post_form(url, formData, success, fail) {
   console.log(">> network start post form method.");
   wx.request({
     url: url,
@@ -25,7 +25,8 @@ function _post_form(url, data, success, fail) {
       'content-type': 'application/x-www-form-urlencoded',
     },
     method: 'POST',
-    data:{data:data},
+    // data:{data:data},
+    data: formData,
     success: function(res) {
       success(res);
     },
@@ -48,16 +49,27 @@ function _post_json(url, data, success, fail) {
     data: data,
     success: function(res) {
       success(res);
+      console.log("success -> res = " + res.data);
     },
     fail: function(res) {
       fail(res);
+      console.log("fail -> res = " + res.data);
     }
   });
   console.log("<< network post json method end.");
 }
 
+function json2Form(json) {
+  var str = [];
+  for (var p in json) {
+    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p]));
+  }
+  return str.join("&");
+}
+
 module.exports = {
   _get: _get,
   _post_form: _post_form,
-  _post_json: _post_json
+  _post_json: _post_json,
+  json2Form: json2Form
 }

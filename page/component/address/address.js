@@ -62,11 +62,13 @@ Page({
     var self = this;
     var saveUserUrl = 'https://shmall.fansdroid.net/save/user';
     var userInfo = {
-        'userName': self.data.address.name,
-        'phone': self.data.address.phone,
-        'address': self.data.address.detail
+        userName: self.data.address.name,
+        phone: self.data.address.phone,
+        address: self.data.address.detail
     };
-    console.log('userInfo = '+userInfo.userName);
+    // var userInfoJson = JSON.stringify(userInfo);
+    // var userInfoPostStr = networkUtil.json2Form(userInfoJson);
+    // console.log('userInfo = ' + userInfo.userName + " , userInfoJson = " + userInfoJson + " , userInfoPostStr = " + userInfoPostStr);
     networkUtil._post_form(saveUserUrl, userInfo,
         function(res) {
           console.log(res);

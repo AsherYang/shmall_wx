@@ -17,6 +17,10 @@
       <view>{{address.detail}}</view>
     </view> -->
   </view>
+
+  <contact-button type="default-dark" size="20" session-from="weapp">
+  </contact-button>
+
   <view class="orders-box">
     <view class="orders">我的订单</view>
     <view class="orders-list" wx:for="{{orders}}" wx:key="index">

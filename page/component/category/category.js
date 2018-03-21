@@ -32,7 +32,7 @@ Page({
   getCategoryFromNet: function() {
     // 获取商品分类 category
     var self = this;
-    var categoryUrl = 'https://shmall.fansdroid.net/get/category';
+    var categoryUrl = app.globalData.SH_URL + '/get/category';
     networkUtil._get(categoryUrl,
       function (res) {
         console.log("category from net = " + res.data.result)

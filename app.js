@@ -4,7 +4,7 @@ App({
   onLaunch: function () {
     console.log('App Launch')
     var self = this;
-    var url = 'https://shmall.fansdroid.net/get/token'
+    var url = self.globalData.SH_URL + '/get/token'
     networkUtil._get(url,
       function (res) {
         self.globalData.token = res.data;
@@ -31,14 +31,16 @@ App({
     hasLogin: false,
     token: null,
 
-    allGoods: [],       // 所有的商品
+    allGoods: [],                         // 所有的商品
+    SH_URL: 'https://shmall.oyf.name',    // 上好服务器
+    VD_URL: 'https://api.vdian.com',      // 微店服务器
   },
 
   // 更新token
   updateToken: function () {
     console.log('update Token');
     var self = this;
-    var updateTokenUrl = 'https://shmall.fansdroid.net/update/token'
+    var updateTokenUrl = self.globalData.SH_URL + '/update/token'
     // var updateTokenUrl = 'https://api.vdian.com'
     networkUtil._get(updateTokenUrl,
       function (res) {
@@ -59,7 +61,7 @@ App({
   // url = https://shmall.fansdroid.net/get/allgoods
   getAllGoods: function () {
     var self = this;
-    var allGoodsUrl = "https://shmall.fansdroid.net/get/allgoods";
+    var allGoodsUrl = self.globalData.SH_URL + "/get/allgoods";
     // console.log("allGoodsUrl = " + allGoodsUrl);
     networkUtil._get(allGoodsUrl,
       function (res) {

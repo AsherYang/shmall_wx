@@ -1,5 +1,7 @@
 // page/component/new-pages/user/address/address.js
 import networkUtil from '../../../util/networkUtil.js';
+var app = getApp();
+
 Page({
   data:{
     address:{
@@ -60,7 +62,7 @@ Page({
    */
   saveUserInfo:function() {
     var self = this;
-    var saveUserUrl = 'https://shmall.fansdroid.net/save/user';
+    var saveUserUrl = app.globalData.SH_URL + '/save/user';
     var userInfo = {
         userName: self.data.address.name,
         phone: self.data.address.phone,
